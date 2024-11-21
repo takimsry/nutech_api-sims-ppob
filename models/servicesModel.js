@@ -5,7 +5,7 @@ export const getAllServices = async (email) => {
 
   try {
     const result = await client.query(
-      'SELECT service_code, service_name, service_icon, service_tariff FROM services'
+      'SELECT service_code, service_name, service_icon, service_tariff FROM services ORDER BY service_code ASC;'
     );
     return result.rows;
   } catch (error) {

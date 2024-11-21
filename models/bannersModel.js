@@ -5,7 +5,7 @@ export const getAllBanners = async () => {
 
   try {
     const result = await client.query(
-      'SELECT banner_name, banner_image, description FROM banners'
+      'SELECT banner_name, banner_image, description FROM banners ORDER BY banner_name ASC;'
     );
     return result.rows;
   } catch (error) {
