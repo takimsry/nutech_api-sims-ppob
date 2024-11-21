@@ -12,7 +12,7 @@ export const getBanners = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getBanners controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }
 
@@ -27,6 +27,6 @@ export const getServices = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getServices controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }

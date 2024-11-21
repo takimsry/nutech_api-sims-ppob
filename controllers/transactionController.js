@@ -16,7 +16,7 @@ export const getBalance = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getBanners controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }
 
@@ -34,7 +34,7 @@ export const topUp = async (req, res) => {
       data: null
     })
   }
-  
+
   try {
     const balance = await getUserBalance(userEmail);
     const transaction = await createTransaction(invoice_number, transaction_type, description, total_amount, userEmail);
@@ -56,7 +56,7 @@ export const topUp = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in makeTransaction controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }
 
@@ -64,7 +64,7 @@ export const makeTransaction = async (req, res) => {
   const invoice_number = generateInvoiceId();
   const transaction_type = "PAYMENT";
   const userEmail = req.user.email;
-  
+
   const { service_code } = req.body;
   const service = await getService(service_code);
   if (!service) {
@@ -74,18 +74,18 @@ export const makeTransaction = async (req, res) => {
       data: null
     });
   }
-  
+
   const description = service.service_name;
   const total_amount = service.service_tariff;
   const balance = await getUserBalance(userEmail);
-  if(total_amount > balance.balance) {
+  if (total_amount > balance.balance) {
     return res.status(400).json({
       status: 102,
       message: "Saldo tidak mencukupi",
       data: null
     });
   }
-  
+
   try {
     const transaction = await createTransaction(invoice_number, transaction_type, description, total_amount, userEmail);
 
@@ -111,7 +111,7 @@ export const makeTransaction = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in makeTransaction controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }
 
@@ -131,6 +131,6 @@ export const getTransactions = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getTransactions controller", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Internal server error", details: error.message });
   }
 }
