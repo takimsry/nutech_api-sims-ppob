@@ -1,7 +1,7 @@
+import { generateInvoiceId } from "../lib/utils/generateInvoiceId.js";
 import { getService } from "../models/servicesModel.js";
 import { createTransaction, getAllTransactions } from "../models/transactionsModel.js";
 import { getUserBalance, updateUserBalance } from "../models/userBalanceModel.js";
-import { nanoid } from "nanoid";
 
 export const getBalance = async (req, res) => {
   const userEmail = req.user.email;
@@ -21,14 +21,6 @@ export const getBalance = async (req, res) => {
 }
 
 export const topUp = async (req, res) => {
-  function generateInvoiceId() {
-    const now = new Date();
-    const datePart = now.toLocaleDateString('id-ID').replace(/\//g, '');
-    const nanoidPart = nanoid(10);
-  
-    return `INV${datePart}-${nanoidPart}`;
-  }
-
   const invoice_number = generateInvoiceId();
   const transaction_type = "TOPUP";
   const userEmail = req.user.email;
@@ -69,14 +61,6 @@ export const topUp = async (req, res) => {
 }
 
 export const makeTransaction = async (req, res) => {
-  function generateInvoiceId() {
-    const now = new Date();
-    const datePart = now.toLocaleDateString('en-GB').replace(/\//g, '');
-    const nanoidPart = nanoid(10);
-  
-    return `INV${datePart}-${nanoidPart}`;
-  }
-
   const invoice_number = generateInvoiceId();
   const transaction_type = "PAYMENT";
   const userEmail = req.user.email;
