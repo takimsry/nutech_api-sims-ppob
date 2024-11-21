@@ -133,9 +133,10 @@ export const makeTransaction = async (req, res) => {
 
 export const getTransactions = async (req, res) => {
   const userEmail = req.user.email;
+  const { offset, limit } = req.query;
 
   try {
-    const transactions = await getAllTransactions(userEmail);
+    const transactions = await getAllTransactions(userEmail, offset, limit);
 
     res.status(200).json({
       status: 0,

@@ -16,13 +16,13 @@ export const createTransaction = async (invoiceNumber, transactionType, descript
   }
 }
 
-export const getAllTransactions = async (userEmail) => {
+export const getAllTransactions = async (userEmail, offset, limit) => {
   const client = await pool.connect();
 
   try {
     const result = await client.query(
-      'SELECT invoice_number, transaction_type, description, total_amount, created_on FROM transactions WHERE user_email = $1;',
-      [userEmail]
+      'SELECT invoice_number, transaction_type, description, total_amount, created_on FROM transactions WHERE user_email = $1 ORDER BY created_on DESC LIMIT $2 OFFSET $3;',
+      [userEmail, limit, offset]
     );
     return result.rows;
   } catch (error) {
