@@ -24,7 +24,7 @@ export const updateProfile = async (req, res) => {
   const userEmail = req.user.email;
 
   try {
-    const updatedOn = new Date().toLocaleString('en-GB');
+    const updatedOn = new Date().toISOString();
 
 
     const updatedUser = await updateUser(userEmail, first_name, last_name, updatedOn);
@@ -64,7 +64,7 @@ export const updateProfileImage = async (req, res) => {
     });
     const imageUrl = uploadedResponse.secure_url;
 
-    const updatedOn = new Date().toLocaleString('en-GB');
+    const updatedOn = new Date().toISOString();
 
     const updatedUser = await updateProfileImg(userEmail, imageUrl, updatedOn);
 

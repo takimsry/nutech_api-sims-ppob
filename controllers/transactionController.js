@@ -41,7 +41,7 @@ export const topUp = async (req, res) => {
 
     if (transaction) {
       const updatedBalance = balance.balance + total_amount;
-      const updatedOn = new Date().toLocaleString('en-GB');
+      const updatedOn = new Date().toISOString();
       await updateUserBalance(userEmail, updatedBalance, updatedOn);
 
       res.status(200).json({
@@ -91,7 +91,7 @@ export const makeTransaction = async (req, res) => {
 
     if (transaction) {
       const updatedBalance = balance.balance - total_amount;
-      const updatedOn = new Date().toLocaleString('en-GB');
+      const updatedOn = new Date().toISOString();
       await updateUserBalance(userEmail, updatedBalance, updatedOn);
 
       res.status(200).json({
