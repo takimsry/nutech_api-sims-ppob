@@ -1,8 +1,6 @@
-"# RESTful API - SIMS-PPOB
+# RESTful API - SIMS-PPOB
 
 A RESTful API for SIMS-PPOB (Payment Point Online Bank) built using Node.js, Express, and PostgreSQL.
-
----
 
 ## Table of Contents
 
@@ -14,13 +12,9 @@ A RESTful API for SIMS-PPOB (Payment Point Online Bank) built using Node.js, Exp
 - [Scripts](#scripts)
 - [Endpoints](#endpoints)
 
----
-
 ## Overview
 
 The REST API includes modules for Registration, Login, Balance Check, Top-Up, and Transactions. Transactions include payment services such as Credit, Game Vouchers, and more.
-
----
 
 ## Features
 
@@ -28,8 +22,6 @@ The REST API includes modules for Registration, Login, Balance Check, Top-Up, an
 - Secure password hashing using bcrypt
 - File uploads and image management with Multer and Cloudinary
 - PostgreSQL database integration
-
----
 
 ## Technologies
 
@@ -39,8 +31,6 @@ The REST API includes modules for Registration, Login, Balance Check, Top-Up, an
 - **File Uploads**: Multer, Cloudinary
 - **Environment Management**: dotenv
 - **Others**: bcryptjs, cookie-parser, nanoid
-
----
 
 ## Setup
 
@@ -52,38 +42,36 @@ The REST API includes modules for Registration, Login, Balance Check, Top-Up, an
 ### Installation
 
 1. Clone this repository:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/takimsry/api_sims-ppob.git
-   \`\`\`
+   ```
 2. Navigate to the project directory:
-   \`\`\`bash
+   ```bash
    cd api_sims-ppob
-   \`\`\`
+   ```
 3. Install dependencies:
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 4. Set up the PostgreSQL database using the provided DDL scripts.
 5. Configure environment variables (see [Environment Variables](#environment-variables)).
 
 ### Run the Application
 
 - **Development**:
-  \`\`\`bash
+  ```bash
   npm run dev
-  \`\`\`
+  ```
 - **Production**:
-  \`\`\`bash
+  ```bash
   npm start
-  \`\`\`
-
----
+  ```
 
 ## Environment Variables
 
-Create a \`.env\` file in the root directory and configure the following:
+Create a `.env` file in the root directory and configure the following:
 
-\`\`\`env
+```env
 POSTGRES_URI=your_postgresql_connection_string
 PORT=3000
 JWT_SECRET=your_jwt_secret
@@ -91,16 +79,12 @@ NODE_ENV=development_or_production
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-\`\`\`
-
----
+```
 
 ## Scripts
 
-- **\`npm run dev\`**: Runs the server in development mode with Nodemon.
-- **\`npm start\`**: Runs the server in production mode.
-
----
+- **`npm run dev`**: Runs the server in development mode with Nodemon.
+- **`npm start`**: Runs the server in production mode.
 
 ## Endpoints
 
