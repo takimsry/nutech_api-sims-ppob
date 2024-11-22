@@ -1,31 +1,20 @@
 # RESTful API - SIMS-PPOB
 
-A RESTful API for SIMS-PPOB (Payment Point Online Bank) built using Node.js, Express, and PostgreSQL.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Setup](#setup)
-- [Environment Variables](#environment-variables)
-- [Scripts](#scripts)
-- [Endpoints](#endpoints)
-
-## Overview
-
-The REST API includes modules for Registration, Login, Balance Check, Top-Up, and Transactions. Transactions include payment services such as Credit, Game Vouchers, and more.
+A RESTful API for SIMS-PPOB (Online Service Payment) built using Node.js, Express, and PostgreSQL. The REST API includes modules for Registration, Login, Balance Check, Top-Up, and Transactions. Transactions include payment services such as Credit, Game Vouchers, and more.
 
 ## Features
 
+- **Transaction Handling**: Allows users to perform transactions such as paying for Pulsa, Game Vouchers, and other services.
+- **Balance Top-Up**: Users can top-up their balance to make payments for services.
+- **Profile and General Information**: Users can view their profile, available banners, and services for payments.
 - User authentication with JWT (JSON Web Tokens)
 - Secure password hashing using bcrypt
 - File uploads and image management with Multer and Cloudinary
 - PostgreSQL database integration
 
-## Technologies
+## Tech Stack
 
-- **Backend Framework**: [Express](https://expressjs.com/)
+- **Backend Framework**: Express.js
 - **Database**: PostgreSQL
 - **Authentication**: JSON Web Tokens (JWT)
 - **File Uploads**: Multer, Cloudinary
@@ -36,8 +25,8 @@ The REST API includes modules for Registration, Login, Balance Check, Top-Up, an
 
 ### Prerequisites
 
-1. Install [Node.js](https://nodejs.org/)
-2. Install [PostgreSQL](https://www.postgresql.org/)
+1. Install Node.js
+2. Install PostgreSQL
 
 ### Installation
 
@@ -54,18 +43,7 @@ The REST API includes modules for Registration, Login, Balance Check, Top-Up, an
    npm install
    ```
 4. Set up the PostgreSQL database using the provided DDL scripts.
-5. Configure environment variables (see [Environment Variables](#environment-variables)).
-
-### Run the Application
-
-- **Development**:
-  ```bash
-  npm run dev
-  ```
-- **Production**:
-  ```bash
-  npm start
-  ```
+5. Configure environment variables.
 
 ## Environment Variables
 
@@ -81,6 +59,17 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
+### Run the Application
+
+- **Development**:
+  ```bash
+  npm run dev
+  ```
+- **Production**:
+  ```bash
+  npm start
+  ```
+
 ## Scripts
 
 - **`npm run dev`**: Runs the server in development mode with Nodemon.
@@ -90,4 +79,4 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 For a complete list of available endpoints and how to use them, please refer to the Postman collections and environment exports available at the following link:
 
-[Postman Collections](https://github.com/takimsry/nutech_api-sims-ppob/postman)
+[Postman Collections](https://github.com/takimsry/nutech_api-sims-ppob/tree/master/postman)
