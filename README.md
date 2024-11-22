@@ -2,6 +2,14 @@
 
 A RESTful API for SIMS-PPOB (Online Service Payment) built using Node.js, Express, and PostgreSQL. The REST API includes modules for Registration, Login, Balance Check, Top-Up, and Transactions. Transactions include payment services such as Credit, Game Vouchers, and more.
 
+## DDL
+
+For the database schema (DDL), please refer to the following file:
+[DDL Schema](https://github.com/takimsry/nutech_api-sims-ppob/blob/master/db/ddl/ddl.sql)
+
+For the banners and services seeder, please refer to the following file:
+[Seeder SQL](https://github.com/takimsry/nutech_api-sims-ppob/blob/master/db/seeder/seeder.sql)
+
 ## Features
 
 - **Transaction Handling**: Allows users to perform transactions such as paying for Pulsa, Game Vouchers, and other services.
@@ -77,6 +85,6 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 ## Endpoints
 
-For a complete list of available endpoints and how to use them, please refer to the Postman collections and environment exports available at the following link:
+For a complete list of available endpoints and how to use them, please refer to the Postman collections and environment exports available at the following folder:
 
-[Postman Collections](https://github.com/takimsry/nutech_api-sims-ppob/tree/master/postman)
+[Postman Collections & Environment](https://github.com/takimsry/nutech_api-sims-ppob/tree/master/postman)
