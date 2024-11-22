@@ -15,7 +15,7 @@ export const getProfile = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getProfile controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
 
@@ -45,7 +45,7 @@ export const updateProfile = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in updateProfile controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
 
@@ -84,6 +84,6 @@ export const updateProfileImage = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in updateProfileImage controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }

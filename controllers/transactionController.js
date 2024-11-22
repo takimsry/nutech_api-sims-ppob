@@ -16,7 +16,7 @@ export const getBalance = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getBanners controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
 
@@ -56,7 +56,7 @@ export const topUp = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in makeTransaction controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
 
@@ -111,7 +111,7 @@ export const makeTransaction = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in makeTransaction controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
 
@@ -131,6 +131,6 @@ export const getTransactions = async (req, res) => {
     });
   } catch (error) {
     console.log("Error in getTransactions controller", error);
-    res.status(500).json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "internal server error" });
   }
 }
